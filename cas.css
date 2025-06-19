@@ -1,0 +1,285 @@
+/* === Reset and Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #e1f5fe, #e3f2fd);
+  color: #0a0a23;
+  padding: 0 20px;
+  line-height: 1.8;
+}
+
+/* === Navbar === */
+.navbar {
+  background: linear-gradient(to right, #1e88e5, #3949ab);
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-brand {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #e1f5fe;
+  text-decoration: underline;
+}
+
+/* === Header Section === */
+.main-header {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile-pic {
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid #bbdefb;
+  margin-bottom: 20px;
+}
+
+.main-header h1 {
+  font-size: 2.5em;
+  color: #1a237e;
+}
+
+.main-header h3 {
+  font-size: 1.3em;
+  color: #3949ab;
+  margin-top: 10px;
+}
+
+/* === Section Styling === */
+section {
+  background: #f3f7ff;
+  border-left: 5px solid #7986cb;
+  padding: 20px 25px;
+  margin: 30px auto;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 0 10px #90caf9;
+}
+
+section h2 {
+  color: #283593;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #1e88e5;
+  margin-top: 5px;
+}
+
+ul {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  list-style: square;
+  color: #2c3e50;
+}
+
+/* === Paragraphs and Links === */
+p {
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+a {
+  color: #1a237e;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #0d47a1;
+  text-decoration: underline;
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .main-header h1 {
+    font-size: 2em;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* === Scroll Smooth === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Extras for Finish === */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #777;
+  font-size: 0.9em;
+}
+
+button {
+  background-color: #3949ab;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e88e5;
+}
+
+blockquote {
+  padding: 15px 20px;
+  border-left: 5px solid #3949ab;
+  font-style: italic;
+  background-color: #e8eaf6;
+  color: #1a237e;
+}
+
+.timeline-item {
+  padding: 10px;
+  border-left: 3px solid #5c6bc0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #7986cb;
+  border-radius: 50%;
+}
+/* === ANIMATIONS === */
+
+/* Keyframes for animations */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animations */
+.navbar {
+  animation: fadeDown 1s ease-in-out;
+}
+
+.profile-pic {
+  animation: fadeInZoom 1.5s ease;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Stagger animation for multiple sections */
+section:nth-of-type(2) { animation-delay: 0.3s; }
+section:nth-of-type(3) { animation-delay: 0.5s; }
+section:nth-of-type(4) { animation-delay: 0.7s; }
+section:nth-of-type(5) { animation-delay: 0.9s; }
+section:nth-of-type(6) { animation-delay: 1.1s; }
+section:nth-of-type(7) { animation-delay: 1.3s; }
+section:nth-of-type(8) { animation-delay: 1.5s; }
+section:nth-of-type(9) { animation-delay: 1.7s; }
+
+/* Enable animation trigger only once */
+body {
+  overflow-x: hidden;
+}
